@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* @tailwind directives removed because Tailwind CSS is not configured in the build tool */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Ayurvedic Wellness Design System - All colors MUST be HSL */
 
