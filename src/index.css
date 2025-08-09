@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ayurvedic Wellness Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Primary earthy color palette */
+    --background: 42 47% 97%;
+    --foreground: 20 14% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 15%;
+
+    /* Sage green primary */
+    --primary: 142 35% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Warm beige secondary */
+    --secondary: 42 31% 88%;
+    --secondary-foreground: 20 14% 25%;
+
+    /* Soft muted tones */
+    --muted: 42 31% 92%;
+    --muted-foreground: 20 8% 55%;
+
+    /* Earth brown accent */
+    --accent: 25 45% 35%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 42 20% 85%;
+    --input: 42 20% 88%;
+    --ring: 142 35% 45%;
+
+    --radius: 12px;
+
+    /* Custom wellness tokens */
+    --sage: 142 35% 45%;
+    --sage-light: 142 35% 65%;
+    --sage-lighter: 142 35% 85%;
+    --earth: 25 45% 35%;
+    --earth-light: 25 45% 55%;
+    --warm-beige: 42 31% 88%;
+    --calm-blue: 210 50% 75%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142 35% 45%), hsl(142 35% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 35% 45%) 0%, hsl(25 45% 35%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(42 47% 97%) 0%, hsl(42 31% 92%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(142 35% 45% / 0.15);
+    --shadow-warm: 0 8px 30px -6px hsl(25 45% 35% / 0.2);
+    --shadow-glow: 0 0 40px hsl(142 35% 65% / 0.3);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 14% 8%;
+    --foreground: 42 47% 95%;
+
+    --card: 20 14% 12%;
+    --card-foreground: 42 47% 95%;
+
+    --popover: 20 14% 12%;
+    --popover-foreground: 42 47% 95%;
+
+    --primary: 142 35% 55%;
+    --primary-foreground: 20 14% 8%;
+
+    --secondary: 20 14% 18%;
+    --secondary-foreground: 42 47% 95%;
+
+    --muted: 20 14% 18%;
+    --muted-foreground: 20 8% 65%;
+
+    --accent: 25 45% 45%;
+    --accent-foreground: 42 47% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 42 47% 95%;
+
+    --border: 20 14% 20%;
+    --input: 20 14% 20%;
+    --ring: 142 35% 55%;
+    
+    /* Dark mode custom tokens */
+    --sage: 142 35% 55%;
+    --sage-light: 142 35% 75%;
+    --sage-lighter: 142 35% 90%;
+    --earth: 25 45% 45%;
+    --earth-light: 25 45% 65%;
+    --warm-beige: 42 31% 25%;
+    --calm-blue: 210 50% 65%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(142 35% 55%), hsl(142 35% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(142 35% 55%) 0%, hsl(25 45% 45%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(20 14% 8%) 0%, hsl(20 14% 12%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-warm: 0 8px 30px -6px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(142 35% 55% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Custom wellness components */
+  .wellness-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .warm-gradient {
+    background: var(--gradient-warm);
+  }
+  
+  .shadow-wellness {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+  
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-wellness {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-gentle {
+    transition: var(--transition-gentle);
+  }
+}
