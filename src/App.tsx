@@ -14,7 +14,14 @@ import NotFound from "./pages/NotFound";
 import { SplashScreen } from "./components/SplashScreen";
 import { initializeDemoUser, getCurrentUser } from "@/lib/auth";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -52,7 +59,7 @@ const App = () => {
                 getCurrentUser() ? (
                   <Layout><Dashboard /></Layout>
                 ) : (
-                  <Navigate to="/login" />
+                  <Navigate to="/" />
                 )
               } 
             />
