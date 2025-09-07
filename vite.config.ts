@@ -16,4 +16,14 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      external: ['@vercel/speed-insights'],
+      output: {
+        manualChunks: {
+          'speed-insights': ['@vercel/speed-insights']
+        }
+      }
+    }
+  }
 }));
